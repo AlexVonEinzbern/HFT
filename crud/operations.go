@@ -16,7 +16,8 @@ func CreatePeer(cPeer model.PeerCreate) model.Peer {
 	defer sqlconn.Close()
 
 	result := conn.Create(&peer)
-	if result.Error != nil{
+	
+	if result.Error != nil {
 		log.Fatal(result.Error)
 	}
 
@@ -62,5 +63,4 @@ func GetPeers(file string) []model.Peer {
 	}
 
 	return peers
-
 }
